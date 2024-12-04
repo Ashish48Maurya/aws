@@ -1,0 +1,15 @@
+service: aws-api
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+
+functions:
+  api:
+    handler: handler.handler
+    events:
+      - httpApi: '*'
+   
+# remove for production
+plugins:
+  - serverless-offline
